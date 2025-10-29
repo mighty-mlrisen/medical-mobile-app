@@ -43,10 +43,12 @@ class GuideListActivity : ComponentActivity() {
         setContentView(R.layout.activity_guide_list)
 
         val lvGuides = findViewById<ListView>(R.id.lvGuides)
-        val titles = guides.map { it.title }
+        //val titles = guides.map { it.title }
 
-        val adapter = ArrayAdapter(this, android.R.layout.simple_list_item_1, titles)
+        //val adapter = ArrayAdapter(this, android.R.layout.simple_list_item_1, titles)
+        val adapter = GuideListAdapter(this, guides)
         lvGuides.adapter = adapter
+
 
         lvGuides.setOnItemClickListener { _, _, position, _ ->
             val guide = guides[position]
@@ -56,5 +58,7 @@ class GuideListActivity : ComponentActivity() {
             }
             startActivity(intent)
         }
+
+
     }
 }
