@@ -6,6 +6,7 @@
     android:layout_height="match_parent"
     android:fitsSystemWindows="true">
 
+    <!-- Верхний бар -->
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/topBar"
         android:layout_width="match_parent"
@@ -39,36 +40,22 @@
             app:layout_constraintBottom_toBottomOf="parent"/>
     </androidx.constraintlayout.widget.ConstraintLayout>
 
-
-    <!-- Контент -->
-    <ScrollView
+    <!-- Заголовок гайда -->
+    <TextView
+        android:id="@+id/tvGuideTitle"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:padding="16dp">
+        android:layout_height="wrap_content"
+        android:text="Название гайда"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:padding="16dp"/>
 
-        <LinearLayout
-            android:id="@+id/contentContainer"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical">
-
-            <!-- Заголовок гайда -->
-            <TextView
-                android:id="@+id/tvGuideTitle"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Название гайда"
-                android:textSize="20sp"
-                android:textStyle="bold"
-                android:layout_marginBottom="12dp"/>
-
-            <!-- Сюда программно будут добавлены пункты (шаги) -->
-            <LinearLayout
-                android:id="@+id/stepsContainer"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="vertical"/>
-
-        </LinearLayout>
-    </ScrollView>
+    <!-- RecyclerView для шагов -->
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/stepsContainer"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:paddingStart="16dp"
+        android:paddingEnd="16dp"/>
 </LinearLayout>
