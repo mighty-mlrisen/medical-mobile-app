@@ -26,10 +26,31 @@ class GuideListAdapter(
         tvTitle.text = guide.title
 
         // --- Кнопка для Toast ---
+        /*
         btnInfo.setOnClickListener {
-            Toast.makeText(context, "Количество шагов: ${guide.steps.size}", Toast.LENGTH_SHORT).show()
+            val dateString = android.text.format.DateFormat.format("dd.MM.yyyy", guide.createdAt)
+            Toast.makeText(
+                context,
+                "Количество шагов: ${guide.steps.size}\nДата создания: $dateString",
+                Toast.LENGTH_SHORT
+            ).show()
         }
 
+
+         */
+
+        btnInfo.setOnClickListener {
+            val dateString = android.text.format.DateFormat.format("dd.MM.yyyy", guide.createdAt)
+
+            val stepsText = context.getString(R.string.toast_steps, guide.steps.size)
+            val dateText = context.getString(R.string.toast_created, dateString)
+
+            Toast.makeText(
+                context,
+                "$stepsText\n$dateText",
+                Toast.LENGTH_SHORT
+            ).show()
+        }
         return view
     }
 }

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">First Aid Guide</string>
+    <string name="back">Back</string>
+    <string name="button_open">Open Guide</string>
+    <string name="list_name">First Aid Guide</string>
+    <string name="info">Info</string>
+    <string name="detail_name">First aid</string>
+    <string name="toast_steps">Number of steps: %1$d</string>
+    <string name="toast_created">Created on: %1$s</string>
+</resources>

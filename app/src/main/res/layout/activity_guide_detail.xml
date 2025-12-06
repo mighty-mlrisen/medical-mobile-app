@@ -30,7 +30,7 @@
             android:id="@+id/tvTopTitle"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:text="Первая помощь"
+            android:text="@string/detail_name"
             android:textColor="#FFFFFF"
             android:textSize="18sp"
             android:gravity="center"
@@ -46,9 +46,16 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Название гайда"
-        android:textSize="20sp"
+        android:textSize="24sp"
         android:textStyle="bold"
-        android:padding="16dp"/>
+        android:padding="16dp"
+
+        android:textColor="#212121"
+        android:fontFamily="sans-serif-condensed"
+        android:letterSpacing="0.02"
+        android:lineSpacingExtra="4dp"
+        android:ellipsize="none"
+        android:scrollHorizontally="false"/>
 
     <!-- RecyclerView для шагов -->
     <androidx.recyclerview.widget.RecyclerView

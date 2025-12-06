@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-<style name="Theme.MedicalMobileApp" parent="Theme.MaterialComponents.DayNight.NoActionBar">
-    <!-- Тут можно переопределять цвета и т.п. -->
-</style>
+    <style name="Theme.MedicalMobileApp" parent="Theme.Material3.DayNight"></style>
+
 </resources>

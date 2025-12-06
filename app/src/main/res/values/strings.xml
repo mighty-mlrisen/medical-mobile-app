@@ -1,4 +1,11 @@
 <resources>
-<string name="app_name">MedicalMobileApp</string>
-<string name="back">Назад</string>
+    <string name="app_name">Справочник первой помощи</string>
+    <string name="back">Назад</string>
+    <string name="button_open">Открыть справочник</string>
+    <string name="list_name">Справочник первой помощи</string>
+    <string name="info">Информация</string>
+    <string name="detail_name">Первая помощь</string>
+    <string name="toast_steps">Количество шагов: %1$d</string>
+    <string name="toast_created">Дата создания: %1$s</string>
 </resources>
+

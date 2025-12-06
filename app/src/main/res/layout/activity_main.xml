@@ -19,6 +19,6 @@
         android:id="@+id/btnOpenGuides"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Открыть справочник" />
+        android:text="@string/button_open" />
 
 </LinearLayout>

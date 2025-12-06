@@ -14,15 +14,50 @@ import androidx.compose.ui.tooling.preview.Preview
 import com.example.medicalmobileapp.ui.theme.MedicalMobileAppTheme
 import android.content.Intent
 import android.widget.Button
+import android.view.Menu
+import android.view.MenuItem
+import java.util.Locale
+import androidx.appcompat.app.AppCompatActivity
 
-class MainActivity : ComponentActivity() {
+class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+
+        supportActionBar?.setDisplayShowTitleEnabled(false)
+
 
         val btnOpen = findViewById<Button>(R.id.btnOpenGuides)
         btnOpen.setOnClickListener {
             startActivity(Intent(this, GuideListActivity::class.java))
         }
     }
+
+
+    override fun onCreateOptionsMenu(menu: Menu): Boolean {
+        menuInflater.inflate(R.menu.main_menu, menu)
+        return true
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        when (item.itemId) {
+            R.id.lang_ru -> setLocale("ru")
+            R.id.lang_en -> setLocale("en")
+        }
+        return true
+    }
+
+    private fun setLocale(lang: String) {
+        val locale = Locale(lang)
+        Locale.setDefault(locale)
+
+
+        val config = resources.configuration
+        config.setLocale(locale)
+
+        resources.updateConfiguration(config, resources.displayMetrics)
+
+        recreate()
+    }
+
 }
