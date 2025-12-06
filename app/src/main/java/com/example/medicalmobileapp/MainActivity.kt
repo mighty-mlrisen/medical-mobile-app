@@ -19,12 +19,12 @@ import android.view.MenuItem
 import java.util.Locale
 import androidx.appcompat.app.AppCompatActivity
 
-class MainActivity : AppCompatActivity() {
+class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        supportActionBar?.setDisplayShowTitleEnabled(false)
+        //supportActionBar?.setDisplayShowTitleEnabled(false)
 
 
         val btnOpen = findViewById<Button>(R.id.btnOpenGuides)
@@ -33,7 +33,7 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
-
+/*
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
         menuInflater.inflate(R.menu.main_menu, menu)
         return true
@@ -51,6 +51,23 @@ class MainActivity : AppCompatActivity() {
         val locale = Locale(lang)
         Locale.setDefault(locale)
 
+        val config = resources.configuration
+        config.setLocale(locale)
+        resources.updateConfiguration(config, resources.displayMetrics)
+
+        val intent = Intent(this, MainActivity::class.java)
+        intent.putExtra("lang", lang)
+        startActivity(intent)
+        finish() // закрываем текущую активити
+    }
+
+ */
+
+    /*
+    private fun setLocale(lang: String) {
+        val locale = Locale(lang)
+        Locale.setDefault(locale)
+
 
         val config = resources.configuration
         config.setLocale(locale)
@@ -58,6 +75,9 @@ class MainActivity : AppCompatActivity() {
         resources.updateConfiguration(config, resources.displayMetrics)
 
         recreate()
+
     }
+
+     */
 
 }
