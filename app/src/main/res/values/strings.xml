@@ -7,5 +7,6 @@
     <string name="detail_name">Первая помощь</string>
     <string name="toast_steps">Количество шагов: %1$d</string>
     <string name="toast_created">Дата создания: %1$s</string>
+    <string name="low_light_warning">Включите освещение для комфортного чтения</string>
 </resources>
 

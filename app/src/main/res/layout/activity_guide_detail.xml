@@ -11,7 +11,7 @@
         android:id="@+id/topBar"
         android:layout_width="match_parent"
         android:layout_height="56dp"
-        android:background="#1976D2">
+        android:background="#B39DDB">
 
         <androidx.appcompat.widget.AppCompatImageButton
             android:id="@+id/btnBack"
@@ -31,7 +31,7 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:text="@string/detail_name"
-            android:textColor="#FFFFFF"
+            android:textColor="@color/text_primary"
             android:textSize="18sp"
             android:gravity="center"
             app:layout_constraintStart_toStartOf="parent"
@@ -50,7 +50,7 @@
         android:textStyle="bold"
         android:padding="16dp"
 
-        android:textColor="#212121"
+        android:textColor="@color/text_primary"
         android:fontFamily="sans-serif-condensed"
         android:letterSpacing="0.02"
         android:lineSpacingExtra="4dp"

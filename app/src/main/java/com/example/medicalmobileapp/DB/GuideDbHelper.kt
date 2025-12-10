@@ -7,6 +7,9 @@ import android.database.sqlite.SQLiteDatabase
 import android.database.sqlite.SQLiteOpenHelper
 import java.util.*
 import com.example.medicalmobileapp.*
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.withContext
+
 
 class GuideDbHelper(context: Context) :
     SQLiteOpenHelper(context, DATABASE_NAME, null, DATABASE_VERSION) {
@@ -66,6 +69,15 @@ class GuideDbHelper(context: Context) :
             db.insert("steps", null, stepValues)
         }
     }
+
+
+
+    suspend fun getGuidesAsync(db: SQLiteDatabase, lang: String): List<Guide> {
+        return withContext(Dispatchers.IO) {
+            getGuides(db, lang)
+        }
+    }
+
 
     fun getGuides(db: SQLiteDatabase, lang: String): List<Guide> {
         val titleColumn = if (lang == "ru") "title_ru" else "title_en"
